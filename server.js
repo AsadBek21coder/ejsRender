@@ -31,7 +31,7 @@ function getCategory (req,res) {
 app.get('/', getHomePage)
 // app.get('/cars', getCars)
 // app.get('/flowers', getFlowers)
-app.get('/:category', getCategory)
+app.get('/:category?', getCategory)
 
 
 
