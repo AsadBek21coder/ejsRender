@@ -6,15 +6,32 @@ const port = 8080;
 function getHomePage (req,res) {
 	res.send ('hello')
 }
-function getCars (req,res) {
+// function getCars (req,res) {
+// }
+// function getFlowers (req,res) {
+// }
+function getCategory (req,res) {
+
+	if ( req.params.category == 'default') {
+	res.send('Default')
+	}
+	else if (req.params.category == 'cars'){
 	res.send('this is Cars page')
-}
-function getFlowers (req,res) {
+	}
+	else if (req.params.category == 'flowers') {
 	res.send('this is Flowers page')
-}
+	}
+	else {
+	res.send ( 'Not found' )
+	}
+	}
+
+
+
 app.get('/', getHomePage)
-app.get('/cars', getCars)
-app.get('/flowers', getFlowers)
+// app.get('/cars', getCars)
+// app.get('/flowers', getFlowers)
+app.get('/:category', getCategory)
 
 
 
