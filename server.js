@@ -7,16 +7,16 @@ app.set('view engine', 'ejs')
 // app.set('views', './')
 
 function getHomePage (req,res) {
-	res.render ('index')
+	res.render ('index', {text: 'This is a main page'})
 }
 
 function getCategory (req,res) {
 
 	if ( req.params.category == 'cars') {
-	res.render ('cars')
+	res.render ('cars',  {text: 'This is a car`s page'})
 	}
 	else if (req.params.category == 'flowers') {
-	res.render('flowers')
+	res.render('flowers', {text: 'This is a flower`s page'})
 	}
 	else {
 	res.send ( 'Not found' )
